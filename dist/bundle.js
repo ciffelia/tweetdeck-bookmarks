@@ -69,7 +69,9 @@
 
     $(document).on('click', '[data-bookmark-tweet]', async event => {
       event.preventDefault();
-      const tweetId = $(event.target).data('bookmark-tweet');
+
+      const tweetOrRetweetId = $(event.target).data('bookmark-tweet');
+      const tweetId = $(`[data-key="${tweetOrRetweetId}"]`).data('tweet-id');
 
       try {
         await addTweetToBookmark(tweetId);
