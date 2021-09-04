@@ -9,8 +9,8 @@
 
 ## Install
 
-1. Install [TamperMonkey](https://tampermonkey.net/) browser extension.
-2. Install this script from [Greasy Fork](https://greasyfork.org/ja/scripts/408464-bookmarks-in-tweetdeck).
+1. First, install [TamperMonkey](https://tampermonkey.net/) browser extension.
+2. Then install this script from [Greasy Fork](https://greasyfork.org/ja/scripts/408464-bookmarks-in-tweetdeck).
 
 ## References
 - [Twitter Undocumented Endpoints for Bookmark](https://gist.github.com/stepney141/c161a83f02c42e161c905249733b9225)
