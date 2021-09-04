@@ -10,11 +10,15 @@ const main = () => {
 
   TD.mustaches['menus/actions.mustache'] = TD.mustaches['menus/actions.mustache'].replace(/{{\/chirp}}\s*<\/ul>/, `${menuItem}{{/chirp}}</ul>`)
 
-  $(document).on('click', '[data-bookmark-tweet]', async event => {
+  document.body.addEventListener('click', async event => {
     event.preventDefault()
 
-    const tweetOrRetweetId = $(event.target).data('bookmark-tweet')
-    const tweetId = $(`[data-key="${tweetOrRetweetId}"]`).data('tweet-id')
+    const tweetOrRetweetId = event.target.dataset.bookmarkTweet
+    if (tweetOrRetweetId == null) {
+      return
+    }
+
+    const tweetId = document.querySelector(`[data-key="${tweetOrRetweetId}"]`).dataset.tweetId
 
     try {
       await addTweetToBookmark(tweetId)

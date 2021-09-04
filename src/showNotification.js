@@ -1,6 +1,6 @@
-const showNotification = (message, type = 'info') => {
-  const TDNotifications = mR.findModule('showNotification')[0]
+import { TDNotifications } from './TDNotifications'
 
+const showNotification = (message, type = 'info') => {
   if (type === 'info') {
     TDNotifications.showNotification({ message })
   } else if (type === 'error') {

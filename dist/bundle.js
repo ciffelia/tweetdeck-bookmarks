@@ -8,11 +8,15 @@
 // @homepage     https://github.com/ciffelia/tweetdeck-bookmarks#readme
 // @supportURL   https://github.com/ciffelia/tweetdeck-bookmarks/issues
 // @include      https://tweetdeck.twitter.com/
-// @require      https://unpkg.com/moduleraid/dist/moduleraid.min.js
+// @require      https://unpkg.com/moduleraid@5.1.1/dist/moduleraid.iife.js
 // ==/UserScript==
 
-(function () {
+(function (ModuleRaid) {
   'use strict';
+
+  function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+  var ModuleRaid__default = /*#__PURE__*/_interopDefaultLegacy(ModuleRaid);
 
   const getCsrfToken = () => {
     const csrfToken = document.cookie
@@ -46,9 +50,13 @@
     }
   };
 
-  const showNotification = (message, type = 'info') => {
-    const TDNotifications = mR.findModule('showNotification')[0];
+  window.webpackJsonp = unsafeWindow.webpackJsonp;
 
+  const mR = new ModuleRaid__default['default']();
+
+  const TDNotifications = mR.findModule('showNotification')[0];
+
+  const showNotification = (message, type = 'info') => {
     if (type === 'info') {
       TDNotifications.showNotification({ message });
     } else if (type === 'error') {
@@ -67,11 +75,15 @@
 
     TD.mustaches['menus/actions.mustache'] = TD.mustaches['menus/actions.mustache'].replace(/{{\/chirp}}\s*<\/ul>/, `${menuItem}{{/chirp}}</ul>`);
 
-    $(document).on('click', '[data-bookmark-tweet]', async event => {
+    document.body.addEventListener('click', async event => {
       event.preventDefault();
 
-      const tweetOrRetweetId = $(event.target).data('bookmark-tweet');
-      const tweetId = $(`[data-key="${tweetOrRetweetId}"]`).data('tweet-id');
+      const tweetOrRetweetId = event.target.dataset.bookmarkTweet;
+      if (tweetOrRetweetId == null) {
+        return
+      }
+
+      const tweetId = document.querySelector(`[data-key="${tweetOrRetweetId}"]`).dataset.tweetId;
 
       try {
         await addTweetToBookmark(tweetId);
@@ -86,4 +98,4 @@
 
   main();
 
-}());
+}(ModuleRaid));

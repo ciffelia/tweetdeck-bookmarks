@@ -11,7 +11,7 @@ const banner = `
 // @homepage     ${packageJson.homepage}
 // @supportURL   ${packageJson.bugs}
 // @include      https://tweetdeck.twitter.com/
-// @require      https://unpkg.com/moduleraid/dist/moduleraid.min.js
+// @require      https://unpkg.com/moduleraid@5.1.1/dist/moduleraid.iife.js
 // ==/UserScript==
 `.trim() + '\n'
 
@@ -20,6 +20,10 @@ export default {
   output: {
     file: 'dist/bundle.js',
     format: 'iife',
-    banner
-  }
+    banner,
+    globals: {
+      ModuleRaid: 'ModuleRaid'
+    }
+  },
+  external: ['ModuleRaid']
 }

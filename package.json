@@ -20,12 +20,11 @@
   },
   "standard": {
     "envs": [
-      "browser",
-      "jquery"
+      "browser"
     ],
     "globals": [
       "TD",
-      "mR"
+      "unsafeWindow"
     ],
     "ignore": [
       "bundle.js"
