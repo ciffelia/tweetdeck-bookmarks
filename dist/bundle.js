@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bookmarks in TweetDeck
 // @namespace    https://ciffelia.com/
-// @version      1.0.1
+// @version      1.0.2
 // @description  'Add Tweet to Bookmarks' in TweetDeck!
 // @author       Ciffelia <mc.prince.0203@gmail.com> (https://ciffelia.com/)
 // @license      MIT
