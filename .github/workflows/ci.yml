@@ -3,19 +3,6 @@ name: CI
 on: [push, pull_request]
 
 jobs:
-  validate-dependencies:
-    runs-on: ubuntu-18.04
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Use Node.js 12.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-
-      - name: Validate Zero-Installs
-        run: yarn install --immutable --immutable-cache --check-cache
-
   lint:
     runs-on: ubuntu-18.04
     steps:
@@ -25,6 +12,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
+
+      - run: yarn install --immutable
 
       - run: yarn run lint
 
@@ -37,5 +26,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
+
+      - run: yarn install --immutable
 
       - run: yarn run build
