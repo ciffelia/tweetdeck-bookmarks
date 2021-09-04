@@ -76,8 +76,6 @@
     TD.mustaches['menus/actions.mustache'] = TD.mustaches['menus/actions.mustache'].replace(/{{\/chirp}}\s*<\/ul>/, `${menuItem}{{/chirp}}</ul>`);
 
     document.body.addEventListener('click', async event => {
-      event.preventDefault();
-
       const tweetOrRetweetId = event.target.dataset.bookmarkTweet;
       if (tweetOrRetweetId == null) {
         return
