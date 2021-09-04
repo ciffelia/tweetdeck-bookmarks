@@ -15,8 +15,8 @@
     "fix": "standard --fix"
   },
   "devDependencies": {
-    "rollup": "^2.23.1",
-    "standard": "^14.3.4"
+    "rollup": "^2.56.3",
+    "standard": "^16.0.3"
   },
   "standard": {
     "envs": [
