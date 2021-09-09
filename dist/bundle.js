@@ -11,12 +11,8 @@
 // @require      https://unpkg.com/moduleraid@5.1.1/dist/moduleraid.iife.js
 // ==/UserScript==
 
-(function (ModuleRaid) {
+(function () {
   'use strict';
-
-  function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
-
-  var ModuleRaid__default = /*#__PURE__*/_interopDefaultLegacy(ModuleRaid);
 
   const getCsrfToken = () => {
     const csrfToken = document.cookie
@@ -52,7 +48,7 @@
 
   window.webpackJsonp = unsafeWindow.webpackJsonp;
 
-  const mR = new ModuleRaid__default['default']();
+  const mR = new ModuleRaid();
 
   const TDNotifications = mR.findModule('showNotification')[0];
 
@@ -96,4 +92,4 @@
 
   main();
 
-}(ModuleRaid));
+}());

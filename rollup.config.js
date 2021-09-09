@@ -20,10 +20,6 @@ export default {
   output: {
     file: 'dist/bundle.js',
     format: 'iife',
-    banner,
-    globals: {
-      ModuleRaid: 'ModuleRaid'
-    }
-  },
-  external: ['ModuleRaid']
+    banner
+  }
 }

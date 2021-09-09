@@ -23,6 +23,7 @@
       "browser"
     ],
     "globals": [
+      "ModuleRaid",
       "TD",
       "unsafeWindow"
     ],
