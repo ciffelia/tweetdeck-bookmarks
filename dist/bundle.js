@@ -46,6 +46,7 @@
     }
   };
 
+  // eslint-disable-next-line new-cap
   const mR = new moduleraid();
 
   const TDNotifications = mR.findModule('showNotification')[0];
