@@ -1,3 +1,1 @@
-window.webpackJsonp = unsafeWindow.webpackJsonp
-
-export const mR = new ModuleRaid()
+export const mR = new moduleraid()

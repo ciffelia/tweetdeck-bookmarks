@@ -11,7 +11,7 @@ const banner = `
 // @homepage     ${packageJson.homepage}
 // @supportURL   ${packageJson.bugs}
 // @include      https://tweetdeck.twitter.com/
-// @require      https://unpkg.com/moduleraid@5.1.1/dist/moduleraid.iife.js
+// @require      https://unpkg.com/moduleraid@5.0.1/dist/moduleraid.iife.js
 // ==/UserScript==
 `.trim() + '\n'
 

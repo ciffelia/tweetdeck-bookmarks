@@ -8,7 +8,7 @@
 // @homepage     https://github.com/ciffelia/tweetdeck-bookmarks#readme
 // @supportURL   https://github.com/ciffelia/tweetdeck-bookmarks/issues
 // @include      https://tweetdeck.twitter.com/
-// @require      https://unpkg.com/moduleraid@5.1.1/dist/moduleraid.iife.js
+// @require      https://unpkg.com/moduleraid@5.0.1/dist/moduleraid.iife.js
 // ==/UserScript==
 
 (function () {
@@ -46,9 +46,7 @@
     }
   };
 
-  window.webpackJsonp = unsafeWindow.webpackJsonp;
-
-  const mR = new ModuleRaid();
+  const mR = new moduleraid();
 
   const TDNotifications = mR.findModule('showNotification')[0];
 
